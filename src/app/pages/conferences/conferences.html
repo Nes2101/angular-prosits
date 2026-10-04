@@ -1,0 +1,9 @@
+<h1>Gestion des conférences</h1>
+
+<app-conference-list
+  (conferenceSelected)="selectConference($event)">
+</app-conference-list>
+
+<app-conference-detail
+  [conference]="selectedConference">
+</app-conference-detail>

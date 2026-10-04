@@ -1,0 +1,26 @@
+.detail-card {
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #fafafa;
+}
+
+.detail-card h3 {
+  margin-top: 0;
+}
+
+.available-message {
+  color: green;
+  font-weight: bold;
+}
+
+.warning-message {
+  color: orange;
+  font-weight: bold;
+}
+
+.full-message {
+  color: red;
+  font-weight: bold;
+}

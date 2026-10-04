@@ -1,0 +1,22 @@
+<p>welcome 4ssa5</p>
+
+<h1>interpolation: {{ username }}</h1>
+
+<button (click)="onSave()">Save</button>
+
+<img [src]="imgUrl" alt="Angular Logo" width="150" />
+
+<input type="text" [(ngModel)]="username" />
+<p>Current input value: {{ username }}</p>
+
+<h2>signal : {{ count() }}</h2>
+<button (click)="increment()">Increment</button>
+
+@if (5>10){
+  <p>5 is greater than 10</p>
+} @else{
+  <p>5 is not greater than 10</p> 
+}
+@for (item of students; track $index){
+  <p>{{ item.name }} - {{ item.age }}</p>
+}

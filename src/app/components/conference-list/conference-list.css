@@ -1,0 +1,33 @@
+.conference-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px 0;
+  background-color: #f8f8f8;
+}
+
+.conference-card h3 {
+  margin-top: 0;
+}
+
+.conference-card button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.available-button {
+  background-color: green;
+}
+
+.warning-button {
+  background-color: orange;
+}
+
+.full-button {
+  background-color: red;
+  cursor: not-allowed;
+}
