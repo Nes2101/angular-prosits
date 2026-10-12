@@ -1,19 +1,18 @@
 import { Component } from '@angular/core';
 import { ConferanceDetails } from '../conferance-details/conferance-details';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { Conferance } from '../services/conferance';
 
 @Component({
   selector: 'app-conferance-list',
-  imports: [ConferanceDetails],
+  imports: [ConferanceDetails, RouterLink, RouterOutlet],
   templateUrl: './conferance-list.html',
   styleUrl: './conferance-list.css',
 })
 export class ConferanceList {
-  conferances :any[]=[
-    {id:1,name:"angular",date:"2023-01-01",place:"tunis"},
-    {id:2,name:"react",date:"2023-02-01",place:"sfax"},
-    {id:3,name:"vue",date:"2023-03-01",place:"sousse"},
-  ]
-  increment(){
-    alert("increment");
+   conferances: any[] = [];
+
+  constructor(private conferenceService: Conferance) {
+    this.conferances = this.conferenceService.getAll();
   }
 }
