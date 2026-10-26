@@ -13,7 +13,9 @@ export const routes: Routes = [
   
     {path:'list',component:ConferanceList},
     {path:'',redirectTo:'home',pathMatch:'full'},
-{path:'add',loadComponent: () => import('./add-user/add-user').then(c => c.AddUser)},
+{path: 'add', loadComponent: () =>
+  import('./add-coferance/add-coferance').then(c => c.AddCoferance)
+},
     {path:'**',component:Notfound},
 
 ];

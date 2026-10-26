@@ -24,9 +24,21 @@ apiUrl = 'http://localhost:3000/conferences';
   }
 
 
+  updateConferance(conf: Conferance) {
+    return this.http.put<Conferance>(
+      this.apiUrl + "/" + conf.id,
+      conf
+    );
+  }
+
 
 // put delete To Do
-
+  deleteConferance(id: number) {
+    return this.http.delete<void>(
+      this.apiUrl + "/" + id
+    );
+  }
 
   
 }
+

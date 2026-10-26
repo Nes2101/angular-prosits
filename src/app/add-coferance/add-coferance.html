@@ -1,1 +1,24 @@
-<p>add-coferance works!</p>
+
+<h1>Add a conference</h1>
+
+<form [formGroup]="conferanceForm" (ngSubmit)="addConferance()">
+  <label>Title</label>
+  <input type="text" formControlName="title">
+
+  <label>Description</label>
+  <textarea formControlName="description"></textarea>
+
+  <label>Location</label>
+  <input type="text" formControlName="location">
+
+  <label>Date</label>
+  <input type="date" formControlName="date">
+
+  <label>Price</label>
+  <input type="number" formControlName="price">
+
+  <label>Number of places</label>
+  <input type="number" formControlName="nbPlaces">
+
+  <button type="submit">Add conference</button>
+</form>
