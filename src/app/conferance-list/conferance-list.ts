@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component,inject } from '@angular/core';
 import { ConferanceDetails } from '../conferance-details/conferance-details';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { Conferance } from '../services/conferance';
+import {  ConferanceService } from '../services/conferance';
 
 @Component({
   selector: 'app-conferance-list',
@@ -10,9 +10,10 @@ import { Conferance } from '../services/conferance';
   styleUrl: './conferance-list.css',
 })
 export class ConferanceList {
+  //signal
    conferances: any[] = [];
 
-  constructor(private conferenceService: Conferance) {
-    this.conferances = this.conferenceService.getAll();
-  }
+  //constructor(private conferenceService: ConferanceService) {}
+  conferenceService = inject(ConferanceService);
+  
 }

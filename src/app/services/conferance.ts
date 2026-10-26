@@ -1,36 +1,32 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Injectable,inject } from '@angular/core';
+import { Conferance } from '../models/conferance';
 
 @Injectable({
   providedIn: 'root',
 })
-export class Conferance {
-    conferences: any[] = [
-    {
-      id: 1,
-      name: 'Angular Conference',
-      date: '2026-10-15',
-      place: 'Tunis'
-    },
-    {
-      id: 2,
-      name: 'Java Conference',
-      date: '2026-10-20',
-      place: 'Sousse'
-    },
-    {
-      id: 3,
-      name: 'AI Conference',
-      date: '2026-10-25',
-      place: 'Sfax'
-    }
-  ];
+export class ConferanceService {
+    conferences: Conferance[] = [];
+   http = inject(HttpClient); 
+apiUrl = 'http://localhost:3000/conferences';
 
-  getAll(): any[] {
-    return this.conferences;
+  getAll(){
+    return this.http.get<Conferance[]>(this.apiUrl);
   }
 
-  getById(id: number): any  {
-    console.log('id', id);
-    return this.conferences.find(conf => conf.id === id);
+  getById(id: number) {
+      return this.http.get<Conferance>(this.apiUrl+"/"+id);
+    //return this.http.get<Conferance>(`${this.apiUrl}/${id}`);
   }
+
+  addConferance(conf: Conferance) {
+    return this.http.post<Conferance>(this.apiUrl, conf);
+  }
+
+
+
+// put delete To Do
+
+
+  
 }

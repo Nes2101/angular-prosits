@@ -1,6 +1,6 @@
 import { Component, input, output ,inject} from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
-import { Conferance } from '../services/conferance';
+import { ConferanceService } from '../services/conferance';
 
 @Component({
   selector: 'app-conferance-details',
@@ -28,7 +28,7 @@ export class ConferanceDetails {
 // }
 conference?: any;
 constructor(
-  private conferenceService: Conferance
+  private conferenceService: ConferanceService
 ) {}
  id= input.required<string>();
 
